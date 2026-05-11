@@ -40,8 +40,8 @@
             background: #f0f0f5;
         }
 
-        body.light-mode img, 
-        body.light-mode i[class^="devicon-"], 
+        body.light-mode img,
+        body.light-mode i[class^="devicon-"],
         body.light-mode .no-invert {
             filter: invert(1) hue-rotate(180deg);
         }
@@ -64,18 +64,40 @@
         }
 
         @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .animate-fade-up {
             animation: fadeUp 0.7s ease forwards;
         }
 
-        .animate-delay-1 { animation-delay: 0.1s; opacity: 0; }
-        .animate-delay-2 { animation-delay: 0.2s; opacity: 0; }
-        .animate-delay-3 { animation-delay: 0.3s; opacity: 0; }
-        .animate-delay-4 { animation-delay: 0.4s; opacity: 0; }
+        .animate-delay-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .animate-delay-4 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
 
         .card-hover {
             transition: all 0.3s ease;
@@ -119,23 +141,37 @@
         <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#" class="text-xl font-bold gradient-text">JAM</a>
             <div class="hidden md:flex gap-8 text-sm font-medium">
-                <a href="#inicio" class="nav-link text-gray-400 hover:text-white transition" data-i18n="nav-home">Inicio</a>
-                <a href="#sobre-mi" class="nav-link text-gray-400 hover:text-white transition" data-i18n="nav-about">Sobre Mí</a>
-                <a href="#tecnologias" class="nav-link text-gray-400 hover:text-white transition" data-i18n="nav-tech">Tecnologías</a>
-                <a href="#proyectos" class="nav-link text-gray-400 hover:text-white transition" data-i18n="nav-projects">Proyectos</a>
-                <a href="#experiencia" class="nav-link text-gray-400 hover:text-white transition" data-i18n="nav-exp">Experiencia</a>
-                <a href="#contacto" class="nav-link text-gray-400 hover:text-white transition" data-i18n="nav-contact">Contacto</a>
-                
+                <a href="#inicio" class="nav-link text-gray-400 hover:text-white transition"
+                    data-i18n="nav-home">Inicio</a>
+                <a href="#sobre-mi" class="nav-link text-gray-400 hover:text-white transition"
+                    data-i18n="nav-about">Sobre Mí</a>
+                <a href="#tecnologias" class="nav-link text-gray-400 hover:text-white transition"
+                    data-i18n="nav-tech">Tecnologías</a>
+                <a href="#proyectos" class="nav-link text-gray-400 hover:text-white transition"
+                    data-i18n="nav-projects">Proyectos</a>
+                <a href="#experiencia" class="nav-link text-gray-400 hover:text-white transition"
+                    data-i18n="nav-exp">Experiencia</a>
+                <a href="#contacto" class="nav-link text-gray-400 hover:text-white transition"
+                    data-i18n="nav-contact">Contacto</a>
+
                 <!-- Toggles -->
-                <button onclick="document.body.classList.toggle('light-mode')" class="text-xl hover:scale-110 transition" title="Cambiar Tema">🌓</button>
-                <button onclick="toggleLanguage()" class="text-sm font-bold text-violet-400 hover:text-fuchsia-400 transition" id="lang-btn">EN</button>
+                <button onclick="document.body.classList.toggle('light-mode')"
+                    class="text-xl hover:scale-110 transition" title="Cambiar Tema">🌓</button>
+                <button onclick="toggleLanguage()"
+                    class="text-sm font-bold text-violet-400 hover:text-fuchsia-400 transition"
+                    id="lang-btn">EN</button>
             </div>
             <div class="flex gap-4 md:hidden">
-                <button onclick="document.body.classList.toggle('light-mode')" class="text-xl hover:scale-110 transition">🌓</button>
-                <button onclick="toggleLanguage()" class="text-sm font-bold text-violet-400 hover:text-fuchsia-400 transition" id="lang-btn-mobile">EN</button>
-                <button id="menu-btn" class="text-white" onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
+                <button onclick="document.body.classList.toggle('light-mode')"
+                    class="text-xl hover:scale-110 transition">🌓</button>
+                <button onclick="toggleLanguage()"
+                    class="text-sm font-bold text-violet-400 hover:text-fuchsia-400 transition"
+                    id="lang-btn-mobile">EN</button>
+                <button id="menu-btn" class="text-white"
+                    onclick="document.getElementById('mobile-menu').classList.toggle('hidden')">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M4 6h16M4 12h16M4 18h16" />
                     </svg>
                 </button>
             </div>
@@ -143,8 +179,10 @@
         <div id="mobile-menu" class="hidden md:hidden px-6 pb-4 flex flex-col gap-3 text-sm">
             <a href="#inicio" class="text-gray-400 hover:text-white transition" data-i18n="nav-home">Inicio</a>
             <a href="#sobre-mi" class="text-gray-400 hover:text-white transition" data-i18n="nav-about">Sobre Mí</a>
-            <a href="#tecnologias" class="text-gray-400 hover:text-white transition" data-i18n="nav-tech">Tecnologías</a>
-            <a href="#proyectos" class="text-gray-400 hover:text-white transition" data-i18n="nav-projects">Proyectos</a>
+            <a href="#tecnologias" class="text-gray-400 hover:text-white transition"
+                data-i18n="nav-tech">Tecnologías</a>
+            <a href="#proyectos" class="text-gray-400 hover:text-white transition"
+                data-i18n="nav-projects">Proyectos</a>
             <a href="#experiencia" class="text-gray-400 hover:text-white transition" data-i18n="nav-exp">Experiencia</a>
             <a href="#contacto" class="text-gray-400 hover:text-white transition" data-i18n="nav-contact">Contacto</a>
         </div>
@@ -154,27 +192,33 @@
     <section id="inicio" class="min-h-screen flex items-center justify-center hero-bg pt-20">
         <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
             <div class="flex-1 text-center md:text-left">
-                <p class="text-accent-400 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-up" data-i18n="hero-role">
+                <p class="text-accent-400 text-sm font-semibold tracking-widest uppercase mb-4 animate-fade-up"
+                    data-i18n="hero-role">
                     Desarrollador Full Stack & DevOps</p>
                 <h1 class="text-5xl md:text-7xl font-900 text-white leading-tight mb-6 animate-fade-up animate-delay-1">
                     Jeremías<br><span class="gradient-text">Arce Miranda</span>
                 </h1>
-                <p class="text-gray-400 text-lg max-w-xl mb-8 leading-relaxed animate-fade-up animate-delay-2" data-i18n="hero-desc">
+                <p class="text-gray-400 text-lg max-w-xl mb-8 leading-relaxed animate-fade-up animate-delay-2"
+                    data-i18n="hero-desc">
                     Técnico en Computación y estudiante de la Licenciatura en Sistemas de Información. Enfocado en
                     desarrollo full stack, administración de sistemas Linux y ciberseguridad defensiva.
                 </p>
                 <div
                     class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-up animate-delay-3">
                     <a href="#contacto"
-                        class="px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold hover:opacity-90 transition text-center" data-i18n="btn-contact">Contactar</a>
+                        class="px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold hover:opacity-90 transition text-center"
+                        data-i18n="btn-contact">Contactar</a>
                     <a href="cv/Curriculum_Vitae.pdf" target="_blank"
-                        class="px-8 py-3 rounded-lg border border-gray-700 text-gray-300 font-semibold hover:border-violet-500 hover:text-white transition text-center" data-i18n="btn-cv-1">Descargar
+                        class="px-8 py-3 rounded-lg border border-gray-700 text-gray-300 font-semibold hover:border-violet-500 hover:text-white transition text-center"
+                        data-i18n="btn-cv-1">Descargar
                         CV ↓</a>
                 </div>
             </div>
             <div class="flex-shrink-0 animate-fade-up animate-delay-4">
-                <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/30 glow bg-gradient-to-b from-violet-900/40 to-dark-900 flex items-end justify-center pt-8">
-                    <img src="images/profile.png" alt="Jeremías Arce Miranda" class="w-full h-full object-cover object-top drop-shadow-2xl">
+                <div
+                    class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/30 glow bg-gradient-to-b from-violet-900/40 to-dark-900 flex items-end justify-center pt-8">
+                    <img src="images/profile.png=" Jeremías Arce Miranda"
+                        class="w-full h-full object-cover object-top drop-shadow-2xl">
                 </div>
             </div>
         </div>
@@ -183,7 +227,8 @@
     <!-- Sobre Mí -->
     <section id="sobre-mi" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-about">Sobre <span class="gradient-text">Mí</span></h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-about">Sobre <span
+                    class="gradient-text">Mí</span></h2>
             <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
             <div class="glass rounded-2xl p-8 md:p-12 card-hover max-w-4xl">
                 <p class="text-gray-400 leading-relaxed text-lg" data-i18n="about-desc">
@@ -210,18 +255,42 @@
                         <span class="w-2 h-2 rounded-full bg-violet-500"></span> Desarrollo
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-html5-plain colored text-lg"></i> HTML</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-css3-plain colored text-lg"></i> CSS</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-javascript-plain colored text-lg"></i> JavaScript</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-typescript-plain colored text-lg"></i> TypeScript</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-python-plain colored text-lg"></i> Python</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-php-plain colored text-lg"></i> PHP</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-csharp-plain colored text-lg"></i> C#</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-cplusplus-plain colored text-lg"></i> C++</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-nodejs-plain-wordmark colored text-lg"></i> Node.js</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-react-original colored text-lg"></i> React</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-tailwindcss-original colored text-lg"></i> Tailwind CSS</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-bootstrap-plain colored text-lg"></i> Bootstrap</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-html5-plain colored text-lg"></i> HTML</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-css3-plain colored text-lg"></i> CSS</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-javascript-plain colored text-lg"></i> JavaScript</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-typescript-plain colored text-lg"></i> TypeScript</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-python-plain colored text-lg"></i> Python</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-php-plain colored text-lg"></i> PHP</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-csharp-plain colored text-lg"></i> C#</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-cplusplus-plain colored text-lg"></i> C++</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-nodejs-plain-wordmark colored text-lg"></i> Node.js</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-react-original colored text-lg"></i> React</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-tailwindcss-original colored text-lg"></i> Tailwind CSS</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-bootstrap-plain colored text-lg"></i> Bootstrap</span>
                     </div>
                 </div>
 
@@ -231,14 +300,30 @@
                         <span class="w-2 h-2 rounded-full bg-fuchsia-500"></span> Herramientas & BD
                     </h3>
                     <div class="flex flex-wrap gap-3">
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-postgresql-plain colored text-lg"></i> PostgreSQL</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-mysql-plain colored text-lg"></i> MySQL</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-mariadb-plain colored text-lg"></i> MariaDB</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-docker-plain colored text-lg"></i> Docker</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-git-plain colored text-lg"></i> Git</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i class="devicon-linux-plain text-white text-lg"></i> Linux</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition">🌐 Redes</span>
-                        <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition">💎 Obsidian</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-postgresql-plain colored text-lg"></i> PostgreSQL</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-mysql-plain colored text-lg"></i> MySQL</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-mariadb-plain colored text-lg"></i> MariaDB</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-docker-plain colored text-lg"></i> Docker</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-git-plain colored text-lg"></i> Git</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition"><i
+                                class="devicon-linux-plain text-white text-lg"></i> Linux</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition">🌐
+                            Redes</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-white/5 border border-white/10 hover:bg-white/10 transition">💎
+                            Obsidian</span>
                     </div>
                 </div>
 
@@ -248,16 +333,30 @@
                         <span class="w-2 h-2 rounded-full bg-purple-500"></span> Habilidades e Idiomas
                     </h3>
                     <div class="flex flex-col gap-3">
-                        <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10" data-i18n="soft-auto">📚 Autodidacta</span>
-                        <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10" data-i18n="soft-team">👥 Trabajo en equipo</span>
-                        <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10" data-i18n="soft-comm">🗣️ Buena comunicación</span>
-                        <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10" data-i18n="soft-nontech">🤝 Comunicación con personas no técnicas</span>
-                        <span class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10" data-i18n="soft-agile">🔄 Metodologías Ágiles</span>
-                        
+                        <span
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10"
+                            data-i18n="soft-auto">📚 Autodidacta</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10"
+                            data-i18n="soft-team">👥 Trabajo en equipo</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10"
+                            data-i18n="soft-comm">🗣️ Buena comunicación</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10"
+                            data-i18n="soft-nontech">🤝 Comunicación con personas no técnicas</span>
+                        <span
+                            class="flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium bg-white/5 border border-white/10"
+                            data-i18n="soft-agile">🔄 Metodologías Ágiles</span>
+
                         <h4 class="text-gray-400 font-medium text-sm mt-2 mb-1" data-i18n="languages">Idiomas</h4>
                         <div class="flex flex-wrap gap-2">
-                            <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-violet-500/10 text-violet-300 border border-violet-500/20" data-i18n="lang-es">🇦🇷 Español (Nativo)</span>
-                            <span class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-fuchsia-500/10 text-fuchsia-300 border border-fuchsia-500/20" data-i18n="lang-en">🇺🇸 Inglés (A2)</span>
+                            <span
+                                class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-violet-500/10 text-violet-300 border border-violet-500/20"
+                                data-i18n="lang-es">🇦🇷 Español (Nativo)</span>
+                            <span
+                                class="flex items-center gap-2 px-3 py-1.5 rounded-lg text-sm font-medium bg-fuchsia-500/10 text-fuchsia-300 border border-fuchsia-500/20"
+                                data-i18n="lang-en">🇺🇸 Inglés (A2)</span>
                         </div>
                     </div>
                 </div>
@@ -268,10 +367,12 @@
     <!-- Proyectos -->
     <section id="proyectos" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-projects">Mis <span class="gradient-text">Proyectos</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-projects">Mis <span
+                    class="gradient-text">Proyectos</span>
             </h2>
             <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-6"></div>
-            <p class="text-gray-500 mb-12 max-w-2xl" data-i18n="projects-desc">Algunos de los proyectos en los que estuve trabajando. Cada uno me
+            <p class="text-gray-500 mb-12 max-w-2xl" data-i18n="projects-desc">Algunos de los proyectos en los que
+                estuve trabajando. Cada uno me
                 dejó algo nuevo.</p>
 
             <div class="grid md:grid-cols-2 gap-8">
@@ -280,8 +381,10 @@
                 <div class="glass rounded-2xl overflow-hidden card-hover">
                     <div class="h-2 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2" data-i18n="proj-1-title">Sistema de Gestión de Comedor (SGC)</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="proj-1-desc">Backend en PostgreSQL para automatizar
+                        <h3 class="text-white font-bold text-lg mb-2" data-i18n="proj-1-title">Sistema de Gestión de
+                            Comedor (SGC)</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="proj-1-desc">Backend en
+                            PostgreSQL para automatizar
                             inscripciones por tipo de dieta. Digitalizó el 100% de los procesos manuales del comedor
                             escolar.</p>
                         <div class="flex flex-wrap gap-2">
@@ -297,8 +400,10 @@
                 <div class="glass rounded-2xl overflow-hidden card-hover">
                     <div class="h-2 bg-gradient-to-r from-fuchsia-500 to-purple-500"></div>
                     <div class="p-6">
-                        <h3 class="text-white font-bold text-lg mb-2" data-i18n="proj-2-title">Web Institucional & Gestión de Inscripciones</h3>
-                        <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="proj-2-desc">Plataforma full-stack para la EET N°21,
+                        <h3 class="text-white font-bold text-lg mb-2" data-i18n="proj-2-title">Web Institucional &
+                            Gestión de Inscripciones</h3>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed" data-i18n="proj-2-desc">Plataforma
+                            full-stack para la EET N°21,
                             incluyendo web pública y sistema de gestión de inscripciones internas.</p>
                         <div class="flex flex-wrap gap-2">
                             <span
@@ -316,7 +421,8 @@
     <!-- Experiencia -->
     <section id="experiencia" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-exp">Mi <span class="gradient-text">Experiencia</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-exp">Mi <span
+                    class="gradient-text">Experiencia</span>
             </h2>
             <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
             <div class="grid md:grid-cols-2 gap-6">
@@ -324,12 +430,14 @@
                 <div class="glass rounded-2xl p-6 card-hover border-l-4 border-violet-500">
                     <div class="flex justify-between items-start mb-3">
                         <div>
-                            <h3 class="text-white font-bold text-lg" data-i18n="exp-1-title">Desarrollador Full Stack & DevOps</h3>
+                            <h3 class="text-white font-bold text-lg" data-i18n="exp-1-title">Desarrollador Full Stack &
+                                DevOps</h3>
                             <p class="text-gray-500 text-sm mt-0.5">EET N°1 "Gral. Francisco Ramírez"</p>
                         </div>
                         <span class="text-violet-400 text-xs font-semibold whitespace-nowrap ml-4">2023 — 2025</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="exp-1-desc">Desarrollé el módulo backend en PostgreSQL para el
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="exp-1-desc">Desarrollé el módulo backend
+                        en PostgreSQL para el
                         Sistema de Gestión de Comedor Escolar (SGC), automatizando el conteo de inscripciones por tipo
                         de dieta y digitalizando el 100% de los procesos manuales.</p>
                 </div>
@@ -337,13 +445,15 @@
                 <div class="glass rounded-2xl p-6 card-hover border-l-4 border-fuchsia-500">
                     <div class="flex justify-between items-start mb-3">
                         <div>
-                            <h3 class="text-white font-bold text-lg" data-i18n="exp-2-title">Pasante Técnico en Computación</h3>
+                            <h3 class="text-white font-bold text-lg" data-i18n="exp-2-title">Pasante Técnico en
+                                Computación</h3>
                             <p class="text-gray-500 text-sm mt-0.5">EET N°21 "Gral. Libertador San Martín"</p>
                         </div>
                         <span class="text-fuchsia-400 text-xs font-semibold whitespace-nowrap ml-4">May — Nov
                             2025</span>
                     </div>
-                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="exp-2-desc">Migración digital completa de registros físicos.
+                    <p class="text-gray-400 text-sm leading-relaxed" data-i18n="exp-2-desc">Migración digital completa
+                        de registros físicos.
                         Programé la web institucional y una plataforma full-stack de gestión. Ensamblé y configuré un
                         laboratorio de informática con más de 20 equipos optimizados.</p>
                 </div>
@@ -355,13 +465,15 @@
     <!-- Educación -->
     <section id="educacion" class="py-24 bg-dark-800/50">
         <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-edu">Mi <span class="gradient-text">Educación</span>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-edu">Mi <span
+                    class="gradient-text">Educación</span>
             </h2>
             <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass rounded-2xl p-8 card-hover border-l-4 border-violet-500">
                     <span class="text-violet-400 text-sm font-semibold">2026 — Presente</span>
-                    <h3 class="text-white text-xl font-bold mt-2" data-i18n="edu-1-title">Licenciatura en Sistemas de Información</h3>
+                    <h3 class="text-white text-xl font-bold mt-2" data-i18n="edu-1-title">Licenciatura en Sistemas de
+                        Información</h3>
                     <p class="text-gray-500 mt-1">Universidad Autónoma de Entre Ríos (UADER - FCyT)</p>
                     <p class="text-gray-600 text-sm mt-1">Oro Verde, Entre Ríos</p>
                 </div>
@@ -378,14 +490,17 @@
     <!-- Contacto -->
     <section id="contacto" class="py-24">
         <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="contact-title">Ponte en <span class="gradient-text">Contacto</span></h2>
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="contact-title">Ponte en <span
+                    class="gradient-text">Contacto</span></h2>
             <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-8 mx-auto"></div>
-            <p class="text-gray-400 mb-12 max-w-lg mx-auto" data-i18n="contact-desc">¿Tenés un proyecto o una oportunidad? Enviame un mensaje.</p>
-            
+            <p class="text-gray-400 mb-12 max-w-lg mx-auto" data-i18n="contact-desc">¿Tenés un proyecto o una
+                oportunidad? Enviame un mensaje.</p>
+
             <div class="grid md:grid-cols-2 gap-12 mb-12 text-left">
                 <!-- Info directa -->
                 <div class="flex flex-col gap-6">
-                    <a href="mailto:jeremiasarcemiranda@gmail.com" class="glass rounded-2xl p-6 card-hover flex items-center gap-4 group">
+                    <a href="mailto:jeremiasarcemiranda@gmail.com"
+                        class="glass rounded-2xl p-6 card-hover flex items-center gap-4 group">
                         <div class="text-3xl">✉️</div>
                         <div>
                             <p class="text-gray-500 text-sm font-medium">Email</p>
@@ -409,9 +524,11 @@
                 </div>
 
                 <!-- Formulario -->
-                <form action="https://formsubmit.co/jeremiasarcemiranda@gmail.com" method="POST" class="glass rounded-2xl p-8 flex flex-col gap-4">
+                <form id="contact-form" action="https://formsubmit.co/jeremiasarcemiranda@gmail.com" method="POST" class="glass rounded-2xl p-8 flex flex-col gap-4">
+                    <!-- Configuración de FormSubmit -->
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="¡Nuevo mensaje de tu Portafolio!">
+                    <input type="hidden" name="_template" value="box">
 
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-1" data-i18n="form-name">Nombre</label>
@@ -425,12 +542,59 @@
                         <label class="block text-sm font-medium text-gray-400 mb-1" data-i18n="form-message">Mensaje</label>
                         <textarea name="message" rows="4" required class="w-full bg-dark-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-violet-500 transition resize-none"></textarea>
                     </div>
-                    <button type="submit" class="mt-2 w-full py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold hover:opacity-90 transition" data-i18n="form-send">Enviar Mensaje</button>
+                    <button type="submit" id="submit-btn" class="mt-2 w-full py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold hover:opacity-90 transition" data-i18n="form-send">Enviar Mensaje</button>
+                    <p id="form-status" class="text-sm font-medium text-center hidden mt-2"></p>
                 </form>
+
+                <script>
+                    document.getElementById('contact-form').addEventListener('submit', function(e) {
+                        e.preventDefault();
+                        const btn = document.getElementById('submit-btn');
+                        const statusText = document.getElementById('form-status');
+                        const originalText = btn.innerText;
+                        
+                        btn.innerText = 'Enviando...';
+                        btn.disabled = true;
+                        btn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                        fetch(this.action, {
+                            method: 'POST',
+                            body: new FormData(this),
+                            headers: { 'Accept': 'application/json' }
+                        })
+                        .then(response => {
+                            if (response.ok) {
+                                this.reset();
+                                btn.classList.add('hidden');
+                                statusText.classList.remove('hidden');
+                                statusText.classList.add('text-emerald-400');
+                                statusText.innerText = '¡Mensaje enviado correctamente! 🎉';
+                                
+                                setTimeout(() => {
+                                    btn.classList.remove('hidden', 'opacity-50', 'cursor-not-allowed');
+                                    btn.innerText = originalText;
+                                    btn.disabled = false;
+                                    statusText.classList.add('hidden');
+                                }, 5000);
+                            } else {
+                                throw new Error('Error en la red');
+                            }
+                        })
+                        .catch(error => {
+                            btn.classList.remove('opacity-50', 'cursor-not-allowed');
+                            btn.innerText = originalText;
+                            btn.disabled = false;
+                            statusText.classList.remove('hidden');
+                            statusText.classList.add('text-red-400');
+                            statusText.innerText = 'Hubo un error. Intenta de nuevo.';
+                        });
+                    });
+                </script>
             </div>
-            
+
             <a href="cv/Curriculum_Vitae.pdf" target="_blank"
-                class="inline-block px-10 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-lg hover:opacity-90 transition" data-i18n="btn-cv">
+                class="inline-block px-10 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-lg hover:opacity-90 transition"
+                data-i18n="btn-cv">
                 📄 Descargar CV Completo
             </a>
         </div>
@@ -453,15 +617,15 @@
                 "nav-projects": "Proyectos",
                 "nav-exp": "Experiencia",
                 "nav-contact": "Contacto",
-                
+
                 "hero-role": "Desarrollador Full Stack & DevOps",
                 "hero-desc": "Técnico en Computación y estudiante de la Licenciatura en Sistemas de Información. Enfocado en desarrollo full stack, administración de sistemas Linux y ciberseguridad defensiva.",
                 "btn-contact": "Contactar",
                 "btn-cv-1": "Descargar CV ↓",
-                
+
                 "title-about": "Sobre Mí",
                 "about-desc": "Soy un estudiante proactivo y apasionado por el mundo de la tecnología. Me considero una persona curiosa, responsable y con una gran capacidad de aprendizaje. Siempre busco adquirir nuevos conocimientos y mejorar mis habilidades técnicas y profesionales. Mi objetivo es desarrollar software de calidad y contribuir a proyectos innovadores.",
-                
+
                 "title-tech": "Tecnologías y Habilidades",
                 "tech-dev": "Desarrollo",
                 "tech-tools": "Herramientas & BD",
@@ -474,24 +638,24 @@
                 "languages": "Idiomas",
                 "lang-es": "🇦🇷 Español (Nativo)",
                 "lang-en": "🇺🇸 Inglés (A2)",
-                
+
                 "title-projects": "Mis Proyectos",
                 "projects-desc": "Algunos de los proyectos en los que estuve trabajando. Cada uno me dejó algo nuevo.",
                 "proj-1-title": "Sistema de Gestión de Comedor (SGC)",
                 "proj-1-desc": "Backend en PostgreSQL para automatizar inscripciones por tipo de dieta. Digitalizó el 100% de los procesos manuales del comedor escolar.",
                 "proj-2-title": "Web Institucional & Gestión de Inscripciones",
                 "proj-2-desc": "Plataforma full-stack para la EET N°21, incluyendo web pública y sistema de gestión de inscripciones internas.",
-                
+
                 "title-exp": "Mi Experiencia",
                 "exp-1-title": "Desarrollador Full Stack & DevOps",
                 "exp-1-desc": "Desarrollé el módulo backend en PostgreSQL para el Sistema de Gestión de Comedor Escolar (SGC), automatizando el conteo de inscripciones por tipo de dieta y digitalizando el 100% de los procesos manuales.",
                 "exp-2-title": "Pasante Técnico en Computación",
                 "exp-2-desc": "Migración digital completa de registros físicos. Programé la web institucional y una plataforma full-stack de gestión. Ensamblé y configuré un laboratorio de informática con más de 20 equipos optimizados.",
-                
+
                 "title-edu": "Mi Educación",
                 "edu-1-title": "Licenciatura en Sistemas de Información",
                 "edu-2-title": "Técnico en Computación",
-                
+
                 "contact-title": "Ponte en Contacto",
                 "contact-desc": "¿Tenés un proyecto o una oportunidad? Enviame un mensaje.",
                 "phone": "Teléfono",
@@ -509,15 +673,15 @@
                 "nav-projects": "Projects",
                 "nav-exp": "Experience",
                 "nav-contact": "Contact",
-                
+
                 "hero-role": "Full Stack Developer & DevOps",
                 "hero-desc": "Computer Technician and Information Systems degree student. Focused on full stack development, Linux systems administration, and defensive cybersecurity.",
                 "btn-contact": "Contact Me",
                 "btn-cv-1": "Download CV ↓",
-                
+
                 "title-about": "About Me",
                 "about-desc": "I am a proactive student passionate about the tech world. I consider myself a curious, responsible person with a great capacity for learning. I am always looking to acquire new knowledge and improve my technical and professional skills. My goal is to develop quality software and contribute to innovative projects.",
-                
+
                 "title-tech": "Technologies & Skills",
                 "tech-dev": "Development",
                 "tech-tools": "Tools & DB",
@@ -530,24 +694,24 @@
                 "languages": "Languages",
                 "lang-es": "🇦🇷 Spanish (Native)",
                 "lang-en": "🇺🇸 English (A2)",
-                
+
                 "title-projects": "My Projects",
                 "projects-desc": "Some of the projects I've been working on. Each one taught me something new.",
                 "proj-1-title": "Dining Hall Management System (SGC)",
                 "proj-1-desc": "PostgreSQL backend to automate enrollment by diet type. Digitized 100% of the school's dining manual processes.",
                 "proj-2-title": "Institutional Web & Enrollment Management",
                 "proj-2-desc": "Full-stack platform for EET N°21, including public website and internal enrollment management system.",
-                
+
                 "title-exp": "My Experience",
                 "exp-1-title": "Full Stack Developer & DevOps",
                 "exp-1-desc": "Developed the backend module in PostgreSQL for the School Dining Management System (SGC), automating enrollment counting by diet type and digitizing 100% of manual processes.",
                 "exp-2-title": "Computer Technician Intern",
                 "exp-2-desc": "Complete digital migration of physical records. Programmed the institutional website and a full-stack management platform. Assembled and configured a computer lab with over 20 optimized equipments.",
-                
+
                 "title-edu": "My Education",
                 "edu-1-title": "Bachelor in Information Systems",
                 "edu-2-title": "Computer Technician",
-                
+
                 "contact-title": "Get in Touch",
                 "contact-desc": "Have a project or opportunity? Send me a message.",
                 "phone": "Phone",
@@ -564,7 +728,7 @@
 
         function toggleLanguage() {
             currentLang = currentLang === 'es' ? 'en' : 'es';
-            
+
             // Update Toggle buttons
             document.getElementById('lang-btn').innerText = currentLang === 'es' ? 'EN' : 'ES';
             document.getElementById('lang-btn-mobile').innerText = currentLang === 'es' ? 'EN' : 'ES';
@@ -572,15 +736,15 @@
             // Apply translations based on data-i18n attributes
             document.querySelectorAll('[data-i18n]').forEach(el => {
                 const key = el.getAttribute('data-i18n');
-                if(translations[currentLang][key]) {
+                if (translations[currentLang][key]) {
                     // if element contains inner HTML spans like gradients, we need to carefully replace just text nodes
                     // but for simplicity, we mapped some full HTML strings or pure text.
                     if (el.children.length > 0 && el.tagName !== 'BUTTON' && el.tagName !== 'A') {
                         // For headers with spans
                         if (key.includes('title')) {
-                           let splitTitle = translations[currentLang][key].split(' ');
-                           let lastWord = splitTitle.pop();
-                           el.innerHTML = splitTitle.join(' ') + ' <span class="gradient-text">' + lastWord + '</span>';
+                            let splitTitle = translations[currentLang][key].split(' ');
+                            let lastWord = splitTitle.pop();
+                            el.innerHTML = splitTitle.join(' ') + ' <span class="gradient-text">' + lastWord + '</span>';
                         }
                     } else {
                         el.innerText = translations[currentLang][key];
