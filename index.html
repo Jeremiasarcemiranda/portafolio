@@ -174,7 +174,7 @@
             </div>
             <div class="flex-shrink-0 animate-fade-up animate-delay-4">
                 <div class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/30 glow bg-gradient-to-b from-violet-900/40 to-dark-900 flex items-end justify-center pt-8">
-                    <img src="images/profile.jpeg" alt="Jeremías Arce Miranda" class="w-full h-full object-cover object-top drop-shadow-2xl">
+                    <img src="images/profile.png" alt="Jeremías Arce Miranda" class="w-full h-full object-cover object-top drop-shadow-2xl">
                 </div>
             </div>
         </div>
@@ -409,7 +409,10 @@
                 </div>
 
                 <!-- Formulario -->
-                <form action="mailto:jeremiasarcemiranda@gmail.com" method="POST" enctype="text/plain" class="glass rounded-2xl p-8 flex flex-col gap-4">
+                <form action="https://formsubmit.co/jeremiasarcemiranda@gmail.com" method="POST" class="glass rounded-2xl p-8 flex flex-col gap-4">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_subject" value="¡Nuevo mensaje de tu Portafolio!">
+
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-1" data-i18n="form-name">Nombre</label>
                         <input type="text" name="name" required class="w-full bg-dark-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-violet-500 transition">
