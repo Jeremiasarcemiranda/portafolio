@@ -46,48 +46,90 @@
             filter: invert(1) hue-rotate(180deg);
         }
 
-        /* Estilo más clásico y rústico, sin gradientes extravagantes */
         .gradient-text {
-            color: #8b5cf6;
+            background: linear-gradient(135deg, #a78bfa, #e879f9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        /* Cartas simples en lugar de efecto vidrio (glassmorphism) */
         .glass {
-            background: #12121a;
-            border: 1px solid #2d2d3b;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.06);
         }
 
-        /* Sombra normal en vez de brillo neón */
         .glow {
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 0 30px rgba(167, 139, 250, 0.12);
         }
 
-        /* Desactivamos las animaciones para que cargue normal y rápido */
-        .animate-fade-up { opacity: 1; transform: none; animation: none; }
-        .animate-delay-1 { opacity: 1; animation: none; }
-        .animate-delay-2 { opacity: 1; animation: none; }
-        .animate-delay-3 { opacity: 1; animation: none; }
-        .animate-delay-4 { opacity: 1; animation: none; }
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-up {
+            animation: fadeUp 0.7s ease forwards;
+        }
+
+        .animate-delay-1 {
+            animation-delay: 0.1s;
+            opacity: 0;
+        }
+
+        .animate-delay-2 {
+            animation-delay: 0.2s;
+            opacity: 0;
+        }
+
+        .animate-delay-3 {
+            animation-delay: 0.3s;
+            opacity: 0;
+        }
+
+        .animate-delay-4 {
+            animation-delay: 0.4s;
+            opacity: 0;
+        }
 
         .card-hover {
-            transition: border-color 0.2s ease;
+            transition: all 0.3s ease;
         }
 
         .card-hover:hover {
-            border-color: #8b5cf6;
+            transform: translateY(-4px);
+            box-shadow: 0 8px 40px rgba(139, 92, 246, 0.12);
+            border-color: rgba(139, 92, 246, 0.25);
         }
 
         .nav-link {
-            text-decoration: none;
+            position: relative;
         }
 
-        .nav-link:hover {
-            color: #8b5cf6;
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #a78bfa, #e879f9);
+            transition: width 0.3s;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
         }
 
         .hero-bg {
-            background-color: #0a0a0f;
-            border-bottom: 1px solid #1a1a2e;
+            background: radial-gradient(ellipse at 50% 0%, rgba(139, 92, 246, 0.1) 0%, transparent 60%);
         }
     </style>
 </head>
@@ -164,19 +206,19 @@
                 <div
                     class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start animate-fade-up animate-delay-3">
                     <a href="#contacto"
-                        class="px-8 py-3 rounded border-2 border-violet-600 bg-violet-600 text-white font-semibold hover:bg-violet-700 hover:border-violet-700 transition text-center"
+                        class="px-8 py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-semibold hover:opacity-90 transition text-center"
                         data-i18n="btn-contact">Contactar</a>
                     <a href="cv/Curriculum_Vitae.pdf" target="_blank"
-                        class="px-8 py-3 rounded border-2 border-gray-600 text-gray-300 font-semibold hover:border-violet-600 hover:text-white transition text-center"
+                        class="px-8 py-3 rounded-lg border border-gray-700 text-gray-300 font-semibold hover:border-violet-500 hover:text-white transition text-center"
                         data-i18n="btn-cv-1">Descargar
                         CV ↓</a>
                 </div>
             </div>
-            <div class="flex-shrink-0">
+            <div class="flex-shrink-0 animate-fade-up animate-delay-4">
                 <div
-                    class="w-56 h-56 md:w-72 md:h-72 rounded border-4 border-violet-600 bg-[#12121a] shadow-xl flex items-end justify-center pt-8 mx-auto">
-                    <img src="images/profile.png" alt="Jeremías Arce Miranda"
-                        class="w-full h-full object-cover object-top">
+                    class="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-violet-500/30 glow bg-gradient-to-b from-violet-900/40 to-dark-900 flex items-end justify-center pt-8">
+                    <img src="images/profile.png=" Jeremías Arce Miranda"
+                        class="w-full h-full object-cover object-top drop-shadow-2xl">
                 </div>
             </div>
         </div>
@@ -186,8 +228,8 @@
     <section id="sobre-mi" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-about">Sobre <span
-                    class="text-violet-400">Mí</span></h2>
-            <div class="w-16 h-1 bg-violet-600 mb-12"></div>
+                    class="gradient-text">Mí</span></h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
             <div class="glass rounded-2xl p-8 md:p-12 card-hover max-w-4xl">
                 <p class="text-gray-400 leading-relaxed text-lg" data-i18n="about-desc">
                     Soy un estudiante proactivo y apasionado por el mundo de la tecnología. Me considero una persona
@@ -203,8 +245,8 @@
     <section id="tecnologias" class="py-24 bg-dark-800/50">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-tech">Tecnologías y <span
-                    class="text-violet-400">Habilidades</span></h2>
-            <div class="w-16 h-1 bg-violet-600 mb-12"></div>
+                    class="gradient-text">Habilidades</span></h2>
+            <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Lenguajes y Frontend -->
@@ -326,9 +368,9 @@
     <section id="proyectos" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-projects">Mis <span
-                    class="text-violet-400">Proyectos</span>
+                    class="gradient-text">Proyectos</span>
             </h2>
-            <div class="w-16 h-1 bg-violet-600 mb-6"></div>
+            <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-6"></div>
             <p class="text-gray-500 mb-12 max-w-2xl" data-i18n="projects-desc">Algunos de los proyectos en los que
                 estuve trabajando. Cada uno me
                 dejó algo nuevo.</p>
@@ -336,8 +378,8 @@
             <div class="grid md:grid-cols-2 gap-8">
 
                 <!-- Proyecto 1 -->
-                <div class="glass rounded overflow-hidden card-hover">
-                    <div class="h-1 bg-violet-500"></div>
+                <div class="glass rounded-2xl overflow-hidden card-hover">
+                    <div class="h-2 bg-gradient-to-r from-violet-500 to-fuchsia-500"></div>
                     <div class="p-6">
                         <h3 class="text-white font-bold text-lg mb-2" data-i18n="proj-1-title">Sistema de Gestión de
                             Comedor (SGC)</h3>
@@ -355,8 +397,8 @@
                 </div>
 
                 <!-- Proyecto 2 -->
-                <div class="glass rounded overflow-hidden card-hover">
-                    <div class="h-1 bg-violet-500"></div>
+                <div class="glass rounded-2xl overflow-hidden card-hover">
+                    <div class="h-2 bg-gradient-to-r from-fuchsia-500 to-purple-500"></div>
                     <div class="p-6">
                         <h3 class="text-white font-bold text-lg mb-2" data-i18n="proj-2-title">Web Institucional &
                             Gestión de Inscripciones</h3>
@@ -380,9 +422,9 @@
     <section id="experiencia" class="py-24">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-exp">Mi <span
-                    class="text-violet-400">Experiencia</span>
+                    class="gradient-text">Experiencia</span>
             </h2>
-            <div class="w-16 h-1 bg-violet-600 mb-12"></div>
+            <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
             <div class="grid md:grid-cols-2 gap-6">
 
                 <div class="glass rounded-2xl p-6 card-hover border-l-4 border-violet-500">
@@ -424,9 +466,9 @@
     <section id="educacion" class="py-24 bg-dark-800/50">
         <div class="max-w-6xl mx-auto px-6">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="title-edu">Mi <span
-                    class="text-violet-400">Educación</span>
+                    class="gradient-text">Educación</span>
             </h2>
-            <div class="w-16 h-1 bg-violet-600 mb-12"></div>
+            <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-12"></div>
             <div class="grid md:grid-cols-2 gap-8">
                 <div class="glass rounded-2xl p-8 card-hover border-l-4 border-violet-500">
                     <span class="text-violet-400 text-sm font-semibold">2026 — Presente</span>
@@ -450,7 +492,7 @@
         <div class="max-w-4xl mx-auto px-6 text-center">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-2" data-i18n="contact-title">Ponte en <span
                     class="gradient-text">Contacto</span></h2>
-            <div class="w-16 h-1 bg-violet-600 mb-8 mx-auto"></div>
+            <div class="w-16 h-1 bg-gradient-to-r from-violet-500 to-fuchsia-500 rounded mb-8 mx-auto"></div>
             <p class="text-gray-400 mb-12 max-w-lg mx-auto" data-i18n="contact-desc">¿Tenés un proyecto o una
                 oportunidad? Enviame un mensaje.</p>
 
@@ -488,6 +530,7 @@
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_subject" value="mensaje enviado">
                     <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_next" value="index.html">
 
                     <div>
                         <label class="block text-sm font-medium text-gray-400 mb-1" data-i18n="form-name">Nombre</label>
@@ -507,7 +550,7 @@
                             class="w-full bg-dark-900/50 border border-gray-700 rounded-lg px-4 py-2 text-white focus:outline-none focus:border-violet-500 transition resize-none"></textarea>
                     </div>
                     <button type="submit" id="submit-btn"
-                        class="mt-2 w-full py-3 rounded bg-violet-600 border border-violet-500 text-white font-bold hover:bg-violet-700 transition"
+                        class="mt-2 w-full py-3 rounded-lg bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold hover:opacity-90 transition"
                         data-i18n="form-send">Enviar Mensaje</button>
                     <p id="form-status" class="text-sm font-medium text-center hidden mt-2"></p>
                 </form>
@@ -559,7 +602,7 @@
             </div>
 
             <a href="cv/Curriculum_Vitae.pdf" target="_blank"
-                class="inline-block px-10 py-4 mt-8 border-2 border-violet-600 text-violet-400 font-bold text-lg hover:bg-violet-600 hover:text-white transition"
+                class="inline-block px-10 py-4 rounded-xl bg-gradient-to-r from-violet-500 to-fuchsia-500 text-white font-bold text-lg hover:opacity-90 transition"
                 data-i18n="btn-cv">
                 📄 Descargar CV Completo
             </a>
